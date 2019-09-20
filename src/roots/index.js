@@ -5,13 +5,13 @@ const passport = require('passport')
 //login
 router.get('/', rutasPost.index)
 
-router.post('/', passport.authenticate('Passport-login', {
+router.post('/', passport.authenticate('Passport-r', {
     successRedirect: '/mala',
     failureRedirect: '/'
 }))
 
-router.get('/mala',(req,res, next) => {
-    res.render('mala', {'title' : 'Inicio'})
+router.get('/Bienvenido',(req,res, next) => {
+    res.render('bienvenido', {'title' : 'Inicio'})
 })
 
 module.exports = router
