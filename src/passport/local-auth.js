@@ -21,7 +21,9 @@ passport.use('Passport-r', new LocalStrategy({
         await usern.save;
         done(null,usern)
 }))
-
+hola ={
+  "hola": "hola como estas"
+}
 passport.use(
   "passport-l",
   new LocalStrategy(
@@ -31,7 +33,14 @@ passport.use(
       passReqToCallback: true
     },
     async (req, email, pass, done) => {
-        
+        const user = User.findOne({email: email})
+        if(!user){
+          done(null,null,hola)
+          console.log(user)
+        }
+        else{
+          console.log(hola)
+        }
     }
   )
 );

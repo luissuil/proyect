@@ -5,8 +5,8 @@ const passport = require('passport')
 //login
 router.get('/', rutasPost.index)
 
-router.post('/', passport.authenticate('Passport-r', {
-    successRedirect: '/mala',
+router.post('/', passport.authenticate('passport-l', {
+    successRedirect: '/Bienvenido',
     failureRedirect: '/'
 }))
 
